@@ -6,6 +6,6 @@
 *.swp
 *.elc
 *.pyc
-*.py.pt
+*.pt.py
 *~
 

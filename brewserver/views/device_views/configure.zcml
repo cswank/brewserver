@@ -1,0 +1,11 @@
+<configure xmlns="http://pylonshq.com/pyramid">
+
+  <!-- this must be included for the view declarations to work -->
+  <include package="pyramid.includes" />
+    <view
+     context="...models.device.Device"
+     view=".view.View"
+     renderer="templates/device.pt"
+     />
+
+</configure>

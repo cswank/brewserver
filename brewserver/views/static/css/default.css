@@ -1,0 +1,23 @@
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+.device {
+    padding-bottom:30px;
+    width:500px;
+}
+
+.button {
+    width:100px;
+    float:left;
+}
+
+.text-value {
+    float:right;
+}
+
+.ui-progressbar-value {
+    background:red;
+}
+

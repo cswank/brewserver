@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset>
+  <rule>
+    <append  theme="children:head" content="children:head" noconent="ingore"/>
+    <append  theme="children:#menu" content="children:#menu" noconent="ingore"/>
+    <append  theme="children:#header" content="children:#header" noconent="ingore"/>
+    <replace theme="#main-content" content="#main-content" nocontent="abort" />
+    <replace theme="#side-bar" content="#side-bar" nocontent="ignore" />
+  </rule>
+</ruleset>

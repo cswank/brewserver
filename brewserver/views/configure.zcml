@@ -1,0 +1,14 @@
+<configure xmlns="http://pylonshq.com/pyramid">
+
+  <!-- this must be included for the view declarations to work -->
+  <include package="pyramid.includes" />
+  <include package=".front_page_views" />
+  <include package=".tank_views" />
+  <include package=".device_views" />
+
+  <static
+     name="static"
+     path="static"
+     />
+
+</configure>

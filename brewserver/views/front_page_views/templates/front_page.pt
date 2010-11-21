@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <link href="${request.application_url}/static/css/ui-lightness/jquery-ui-1.8.6.custom.css" rel="stylesheet" type="text/css"/>
+    <link href="${request.application_url}/static/css/default.css" rel="stylesheet" type="text/css" />
+    <link href="${request.application_url}/static/css/custom-theme/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="${request.application_url}/static/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="${request.application_url}/static/js/frontpage.js"></script>
+    <script type="text/javascript">
+      var stateUrl = "${state_url}";
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="lineage"><a tal:replace="structure lineage"></a></div>
+    </div>
+    <div id="side-bar">
+    </div>
+    <div id="main-content">
+      <h1>Tanks</h1>
+      <table>
+        <tr>
+          <td><a href="hlt">Hot Liquor Tank</a></td>
+          <td><a id="hlt-temperature"></a><a> &deg;C</a></td>
+          <td><a id="hlt-volume"></a><a> L</a></td>
+        </tr>
+        <tr>
+          <td><a href="tun">Mash/Lauder Tun</a></td>
+          <td><a id="tun-temperature"></a><a> &deg;C</a></td>
+          <td><a id="tun-volume"></a><a> L</a></td>
+        </tr>
+        <tr>
+          <td><a href="boiler">Boiler</a></td>
+          <td><a id="boiler-temperature"></a><a> &deg;C</a></td>
+          <td><a id="boiler-volume"></a><a> L</a></td>
+        </tr>
+        <tr>
+          <td><a href="fermenter">Fermenter</a></td>
+          <td><a id="fermenter-temperature"></a></td>
+          <td><a id="fermenter-volume"></a></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

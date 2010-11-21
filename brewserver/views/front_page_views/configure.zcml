@@ -1,0 +1,30 @@
+<configure xmlns="http://pylonshq.com/pyramid">
+
+  <!-- this must be included for the view declarations to work -->
+  <include package="pyramid.includes" />
+
+  <view
+     context="...models.FrontPage"
+     view=".view.FrontPageView"
+     renderer="templates/front_page.pt"
+     />
+
+  <view
+     context="...models.FrontPage"
+     view=".view.StateView"
+     name="state.json"
+     />
+
+  <view
+     context="...models.FrontPage"
+     view=".view.SetStateView"
+     name="set-state"
+     />
+
+  <view
+     context="...models.FrontPage"
+     view=".view.SetStatesView"
+     name="set-states"
+     />
+  
+</configure>

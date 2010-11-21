@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <link href="${request.application_url}/static/css/ui-lightness/jquery-ui-1.8.6.custom.css" rel="stylesheet" type="text/css"/>
+    <link href="${request.application_url}/static/css/default.css" rel="stylesheet" type="text/css" />
+    <link href="${request.application_url}/static/css/custom-theme/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="${request.application_url}/static/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="${request.application_url}/static/js/jquery-ui-1.8.6.custom.min.js"></script>
+    <script type="text/javascript" src="${request.application_url}/static/js/tank.js"></script>
+    <script type="text/javascript">
+      var stateUrl = "${state_url}";
+      var name = "${name}";
+      var sendCommandUrl = "${send_command_url}";
+    </script>
+  </head>
+  <body>
+    <div id="header">
+      <div id="lineage"><a tal:replace="structure lineage"></a></div>
+    </div>
+    <div id="side-bar">
+    </div>
+    <div id="main-content">
+      <h1>${name}</h1>
+      <div class="device">
+        <a>Mode</a><br/>
+        <input type="checkbox" id="mode-button" /><label for="mode-button">Receive</label>
+      </div>
+      <div tal:condition="python: 'temperature' in devices" class="device">
+        <a>Temperature</a><a id="thermometer-text" class="text-value">0</a>
+        <div id="thermometer"></div>
+        <a>Temperature Target</a><a id="thermometer-target-text" class="text-value input-device">0</a>
+        <div id="thermometer-target"></div>
+      </div>
+      <div tal:condition="python: 'volume' in devices" class="device">
+        <a>Volume</a><a id="volume-text" class="text-value">0</a>
+        <div id="volume"></div>
+        <a>Volume Target</a><a id="volume-target-text" class="text-value input-device">0</a>
+        <div id="volume-target"></div>
+      </div>
+      <div>
+        <span tal:condition="python: 'burner' in devices" class="button">
+          <a>Burner</a><br/>
+          <input type="checkbox" id="burner-button" class="input-device"/><label for="burner-button">Off</label>
+        </span>
+        <span tal:condition="python: 'cooler' in devices" class="button">
+          <a>Cooler</a><br/>
+          <input type="checkbox" id="cooler-button" class="input-device"/><label for="cooler-button">Off</label>
+        </span>
+        <span tal:condition="python: 'stirrer' in devices" class="button">
+          <a>Stirrer</a><br/>
+          <input type="checkbox" id="stirrer-button"  class="input-device"/><label for="stirrer-button">Off</label>
+        </span>
+        <span tal:condition="python: 'fill_valve' in devices" class="button">
+          <a>Fill Valve</a><br/>
+          <input type="checkbox" id="fill-valve-button"  class="input-device"/><label for="fill-valve-button">Off</label>
+        </span>
+      </div>
+    </div>
+  </body>
+</html>

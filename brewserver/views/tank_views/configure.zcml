@@ -1,0 +1,20 @@
+<configure xmlns="http://pylonshq.com/pyramid">
+
+  <!-- this must be included for the view declarations to work -->
+  <include package="pyramid.includes" />
+
+  <view
+     context="...models.Tank"
+     view=".view.TankView"
+     renderer="templates/tank.pt"
+     />
+
+  <view
+     context="...models.Tank"
+     view=".view.StateView"
+     name="state.json"
+     />
+
+  
+
+</configure>

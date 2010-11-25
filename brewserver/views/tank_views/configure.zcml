@@ -15,6 +15,22 @@
      name="state.json"
      />
 
+  <view
+     context="...models.Tank"
+     view=".view.CalibrationCurveView"
+     name="curve.json"
+     />
   
+  <view
+     context="...models.Tank"
+     view=".view.DeletePointView"
+     name="delete-point"
+     />
+  
+  <view
+    context="...models.Tank"
+     view=".view.SavePointView"
+     name="save-point"
+     />
 
 </configure>

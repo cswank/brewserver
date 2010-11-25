@@ -1,4 +1,5 @@
 from .device import Device
+from pyrobot.brewery import BreweryError
 
 class Tank(object):
 
@@ -17,6 +18,18 @@ class Tank(object):
     def state(self):
         state = self.tank.state
         return state
+
+    def get_calibration_curve(self, device):
+        device = self.tank.devices[device]
+        return device.calibration_curve
+
+    def delete_calibration_point(self, point, device):
+        device = self.tank.devices[device]
+        data = device.delete_calibration_point(point)
+
+    def save_calibration_point(self, point, device):
+        device = self.tank.devices[device]
+        device.set_calibration_point(point);
 
     @property
     def name(self):

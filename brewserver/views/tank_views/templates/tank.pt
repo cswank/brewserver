@@ -6,10 +6,15 @@
     <script type="text/javascript" src="${request.application_url}/static/js/jquery-1.4.2.min.js"></script>
     <script type="text/javascript" src="${request.application_url}/static/js/jquery-ui-1.8.6.custom.min.js"></script>
     <script type="text/javascript" src="${request.application_url}/static/js/tank.js"></script>
+    <script type="text/javascript" src="${request.application_url}/static/js/calibration.js"></script>
+     <script language="javascript" type="text/javascript" src="${request.application_url}/static/js/flot/jquery.flot.js"></script>
     <script type="text/javascript">
       var stateUrl = "${state_url}";
       var name = "${name}";
       var sendCommandUrl = "${send_command_url}";
+      var calibrationCurveUrl = "${calibration_curve_url}";
+      var deletePointUrl = "${delete_point_url}";
+      var savePointUrl = "${save_point_url}";
     </script>
   </head>
   <body>
@@ -31,7 +36,7 @@
         <div id="thermometer-target"></div>
       </div>
       <div tal:condition="python: 'volume' in devices" class="device">
-        <a>Volume</a><a id="volume-text" class="text-value">0</a>
+        <a>Volume</a><a href="#" id="calibrate"> calibrate</a><a id="volume-text" class="text-value">0</a>
         <div id="volume"></div>
         <a>Volume Target</a><a id="volume-target-text" class="text-value input-device">0</a>
         <div id="volume-target"></div>
@@ -54,6 +59,17 @@
           <input type="checkbox" id="fill-valve-button"  class="input-device"/><label for="fill-valve-button">Off</label>
         </span>
       </div>
-    </div>
+      <div id="calibration" style="width:600px;height:300px;">
+        <div id="calibration-table" style="width:600px;height:300px;">
+        </div>
+        <input type="text" id="calibration-point"/><br/>
+          <a id="set-calibration-point" href="#">set calibration point</a><br/>
+          <a>Current Value: </a><a id="current-value">0</a>
+          <a id="click-data"></a>
+      </div>
+      <div id="dialog-confirm" title="Delete data point?">
+	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure you want to delete?</p>
+      </div>
+    </div><!--main content-->
   </body>
 </html>

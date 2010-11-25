@@ -2,6 +2,7 @@ import json
 from webob.exc import Response
 from ..base_view import BaseView
 from pyramid.url import model_url
+from pyrobot.brewery import BreweryError
 
 class TankView(BaseView):
 
@@ -11,7 +12,10 @@ class TankView(BaseView):
             'name': context.name,
             'devices': context.tank.devices.keys(),
             'state_url': model_url(context, request, 'state.json'),
+            'calibration_curve_url': model_url(context, request, 'curve.json'),
             'send_command_url': model_url(context.__parent__, request, 'set-state'),
+            'delete_point_url': model_url(context, request, 'delete-point'),
+            'save_point_url': model_url(context, request, 'save-point'),
             }
 
 class StateView(BaseView):
@@ -20,4 +24,30 @@ class StateView(BaseView):
         state = context.state
         self.response = Response(content_type="application/json", body=json.dumps(state))
 
+
+class CalibrationCurveView(BaseView):
+    
+    def __init__(self, context, request):
+        data = context.get_calibration_curve('volume')
+        self.response = Response(content_type="application/json", body=json.dumps(data))
+
+class DeletePointView(BaseView):
+    
+    def __init__(self, context, request):
+        point =  int(request.params['point'])
+        try:
+            context.delete_calibration_point(point, 'volume')
+        except BreweryError, e:
+            body = {'error': str(e)}
+        else:
+            body = {'result':'ok'}
+        self.response = Response(content_type="application/json", body=json.dumps(body))
+
+
+class SavePointView(BaseView):
+    
+    def __init__(self, context, request):
+        set_point =  float(request.params['set_point'])
+        context.save_calibration_point(set_point, 'volume')
+        self.response = Response(content_type="application/json", body=json.dumps({'result':'ok'}))
 

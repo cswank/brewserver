@@ -194,7 +194,24 @@ function handleState(data) {
     timeoutId = setTimeout(getState, 1000);
 }
 
+function handleCalibrationOpen(){
+    clearTimeout(timeoutId);
+}
+
+function handleCalibrationClose(){
+    getState();
+}
+
 $(document).ready(function(){
+    $('#calibration').dialog({
+	modal: true,
+        autoOpen: false,
+        width: 700,
+        height: 440,
+        close: handleCalibrationClose,
+        open: handleCalibrationOpen,
+    });
+    
     $('#thermometer').progressbar({'value':0});
     $('#thermometer-target').slider(
         {

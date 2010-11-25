@@ -3,6 +3,11 @@ Design by Free CSS Templates
 http://www.freecsstemplates.org
 Released for free under a Creative Commons Attribution 2.5 License
 */
+
+#calibration {
+    text-align:center;
+}
+
 .device {
     padding-bottom:30px;
     width:500px;

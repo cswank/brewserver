@@ -28,15 +28,17 @@ class StateView(BaseView):
 class CalibrationCurveView(BaseView):
     
     def __init__(self, context, request):
-        data = context.get_calibration_curve('volume')
+        device = request.params['device']
+        data = context.get_calibration_curve(device)
         self.response = Response(content_type="application/json", body=json.dumps(data))
 
 class DeletePointView(BaseView):
     
     def __init__(self, context, request):
         point =  int(request.params['point'])
+        device = request.params['device']
         try:
-            context.delete_calibration_point(point, 'volume')
+            context.delete_calibration_point(point, device)
         except BreweryError, e:
             body = {'error': str(e)}
         else:
@@ -47,6 +49,7 @@ class DeletePointView(BaseView):
 class SavePointView(BaseView):
     
     def __init__(self, context, request):
+        device = request.params['device']
         set_point =  float(request.params['set_point'])
         context.save_calibration_point(set_point, 'volume')
         self.response = Response(content_type="application/json", body=json.dumps({'result':'ok'}))

@@ -30,13 +30,13 @@
         <input type="checkbox" id="mode-button" /><label for="mode-button">Receive</label>
       </div>
       <div tal:condition="python: 'temperature' in devices" class="device">
-        <a>Temperature</a><a id="thermometer-text" class="text-value">0</a>
+        <a>Temperature</a><a href="#" id="calibrate-temperature" device="temperature"> calibrate</a><a id="thermometer-text" class="text-value">0</a>
         <div id="thermometer"></div>
         <a>Temperature Target</a><a id="thermometer-target-text" class="text-value input-device">0</a>
         <div id="thermometer-target"></div>
       </div>
       <div tal:condition="python: 'volume' in devices" class="device">
-        <a>Volume</a><a href="#" id="calibrate"> calibrate</a><a id="volume-text" class="text-value">0</a>
+        <a>Volume</a><a href="#" id="calibrate-volume" device="volume"> calibrate</a><a id="volume-text" class="text-value">0</a>
         <div id="volume"></div>
         <a>Volume Target</a><a id="volume-target-text" class="text-value input-device">0</a>
         <div id="volume-target"></div>

@@ -2,81 +2,82 @@ registry = dict(version=0)
 def bind():
     from cPickle import loads as _loads
     _lookup_attr = _loads('cchameleon.core.codegen\nlookup_attr\np1\n.')
-    _attrs_4317127632 = _loads('(dp1\nVsrc\np2\nV${request.application_url}/static/js/jquery-ui-1.8.6.custom.min.js\np3\nsVtype\np4\nVtext/javascript\np5\ns.')
     _re_amp = _loads("cre\n_compile\np1\n(S'&(?!([A-Za-z]+|#[0-9]+);)'\np2\nI0\ntRp3\n.")
-    _attrs_4317129232 = _loads('(dp1\nVid\np2\nVthermometer-target\np3\ns.')
-    _attrs_4317127824 = _loads('(dp1\nVsrc\np2\nV${request.application_url}/static/js/flot/jquery.flot.js\np3\nsVlanguage\np4\nVjavascript\np5\nsVtype\np6\nVtext/javascript\np7\ns.')
-    _attrs_4317129360 = _loads('(dp1\n.')
-    _attrs_4317148944 = _loads('(dp1\n.')
-    _attrs_4317128848 = _loads('(dp1\nVclass\np2\nVdevice\np3\ns.')
-    _attrs_4317128208 = _loads('(dp1\nVid\np2\nVmain-content\np3\ns.')
+    _attrs_4358670608 = _loads('(dp1\n.')
+    _attrs_4358645776 = _loads('(dp1\nVsrc\np2\nV${request.application_url}/static/js/jquery-ui-1.8.6.custom.min.js\np3\nsVtype\np4\nVtext/javascript\np5\ns.')
+    _attrs_4358670096 = _loads('(dp1\nVtype\np2\nVcheckbox\np3\nsVid\np4\nVcooler-button\np5\nsVclass\np6\nVinput-device\np7\ns.')
+    _attrs_4358645200 = _loads('(dp1\n.')
+    _attrs_4358646288 = _loads('(dp1\nVid\np2\nVlineage\np3\ns.')
+    _attrs_4358671504 = _loads('(dp1\nVfor\np2\nVfill-valve-button\np3\ns.')
+    _attrs_4358646352 = _loads('(dp1\nVid\np2\nVmain-content\np3\ns.')
     _init_stream = _loads('cchameleon.core.generation\ninitialize_stream\np1\n.')
-    _attrs_4317129168 = _loads('(dp1\nVid\np2\nVthermometer-target-text\np3\nsVclass\np4\nVtext-value input-device\np5\ns.')
-    _attrs_4317148304 = _loads('(dp1\n.')
-    _attrs_4317147792 = _loads('(dp1\nVtype\np2\nVcheckbox\np3\nsVid\np4\nVcooler-button\np5\nsVclass\np6\nVinput-device\np7\ns.')
-    _attrs_4317130256 = _loads('(dp1\nVclass\np2\nVbutton\np3\ns.')
-    _attrs_4317127696 = _loads('(dp1\nVsrc\np2\nV${request.application_url}/static/js/tank.js\np3\nsVtype\np4\nVtext/javascript\np5\ns.')
-    _attrs_4317129872 = _loads('(dp1\nVid\np2\nVvolume-target-text\np3\nsVclass\np4\nVtext-value input-device\np5\ns.')
-    _attrs_4317129040 = _loads('(dp1\nVid\np2\nVthermometer\np3\ns.')
-    _attrs_4317147280 = _loads('(dp1\nVfor\np2\nVburner-button\np3\ns.')
-    _attrs_4317130704 = _loads('(dp1\nVtype\np2\nVcheckbox\np3\nsVid\np4\nVburner-button\np5\nsVclass\np6\nVinput-device\np7\ns.')
-    _attrs_4317149904 = _loads('(dp1\n.')
-    _attrs_4317128720 = _loads('(dp1\nVtype\np2\nVcheckbox\np3\nsVid\np4\nVmode-button\np5\ns.')
-    _attrs_4317147920 = _loads('(dp1\nVfor\np2\nVcooler-button\np3\ns.')
-    _attrs_4317129104 = _loads('(dp1\n.')
-    _attrs_4317128464 = _loads('(dp1\nVclass\np2\nVdevice\np3\ns.')
-    _attrs_4317127888 = _loads('(dp1\nVtype\np2\nVtext/javascript\np3\ns.')
-    _attrs_4317128912 = _loads('(dp1\n.')
-    _attrs_4317127248 = _loads('(dp1\n.')
-    _attrs_4317128784 = _loads('(dp1\nVfor\np2\nVmode-button\np3\ns.')
-    _attrs_4317129744 = _loads('(dp1\n.')
-    _attrs_4317128528 = _loads('(dp1\nVclass\np2\nVdevice\np3\ns.')
-    _attrs_4317128400 = _loads('(dp1\n.')
+    _attrs_4358646224 = _loads('(dp1\nVid\np2\nVside-bar\np3\ns.')
+    _attrs_4358685392 = _loads('(dp1\nVstyle\np2\nVfloat:left; margin:0 7px 20px 0;\np3\nsVclass\np4\nVui-icon ui-icon-alert\np5\ns.')
+    _attrs_4358684816 = _loads('(dp1\nVid\np2\nVcurrent-value\np3\ns.')
+    _attrs_4358646160 = _loads('(dp1\nVid\np2\nVheader\np3\ns.')
+    _attrs_4358670928 = _loads('(dp1\nVclass\np2\nVbutton\np3\ns.')
+    _attrs_4358672208 = _loads('(dp1\n.')
+    _attrs_4358670736 = _loads('(dp1\nVtype\np2\nVcheckbox\np3\nsVid\np4\nVstirrer-button\np5\nsVclass\np6\nVinput-device\np7\ns.')
+    _attrs_4358647376 = _loads('(dp1\nVid\np2\nVthermometer-target-text\np3\nsVclass\np4\nVtext-value input-device\np5\ns.')
+    _attrs_4358645520 = _loads('(dp1\nVhref\np2\nV${request.application_url}/static/css/ui-lightness/jquery-ui-1.8.6.custom.css\np3\nsVrel\np4\nVstylesheet\np5\nsVtype\np6\nVtext/css\np7\ns.')
+    _attrs_4358647440 = _loads('(dp1\nVid\np2\nVthermometer-target\np3\ns.')
+    _attrs_4358669008 = _loads('(dp1\nVclass\np2\nVbutton\np3\ns.')
+    _attrs_4358645968 = _loads('(dp1\nVsrc\np2\nV${request.application_url}/static/js/flot/jquery.flot.js\np3\nsVlanguage\np4\nVjavascript\np5\nsVtype\np6\nVtext/javascript\np7\ns.')
+    _attrs_4358668624 = _loads('(dp1\nVid\np2\nVvolume-target-text\np3\nsVclass\np4\nVtext-value input-device\np5\ns.')
+    _attrs_4358669456 = _loads('(dp1\nVtype\np2\nVcheckbox\np3\nsVid\np4\nVburner-button\np5\nsVclass\np6\nVinput-device\np7\ns.')
+    _attrs_4358685008 = _loads('(dp1\nVid\np2\nVdialog-confirm\np3\nsVtitle\np4\nVDelete data point?\np5\ns.')
+    _attrs_4358671376 = _loads('(dp1\nVtype\np2\nVcheckbox\np3\nsVid\np4\nVfill-valve-button\np5\nsVclass\np6\nVinput-device\np7\ns.')
+    _attrs_4358645840 = _loads('(dp1\nVsrc\np2\nV${request.application_url}/static/js/tank.js\np3\nsVtype\np4\nVtext/javascript\np5\ns.')
+    _attrs_4358647696 = _loads('(dp1\nVid\np2\nVvolume-text\np3\nsVclass\np4\nVtext-value\np5\ns.')
+    _attrs_4358647312 = _loads('(dp1\n.')
+    _attrs_4358671952 = _loads('(dp1\n.')
+    _attrs_4358671696 = _loads('(dp1\nVstyle\np2\nVwidth:600px;height:300px;\np3\nsVid\np4\nVcalibration-table\np5\ns.')
     _init_default = _loads('cchameleon.core.generation\ninitialize_default\np1\n.')
-    _attrs_4317148688 = _loads('(dp1\nVstyle\np2\nVwidth:600px;height:300px;\np3\nsVid\np4\nVcalibration\np5\ns.')
-    _attrs_4317148176 = _loads('(dp1\n.')
-    _attrs_4317147984 = _loads('(dp1\nVclass\np2\nVbutton\np3\ns.')
-    _attrs_4317150352 = _loads('(dp1\nVid\np2\nVdialog-confirm\np3\nsVtitle\np4\nVDelete data point?\np5\ns.')
-    _attrs_4317128016 = _loads('(dp1\nVid\np2\nVheader\np3\ns.')
-    _attrs_4317129616 = _loads('(dp1\nVid\np2\nVvolume\np3\ns.')
-    _attrs_4317148432 = _loads('(dp1\nVtype\np2\nVcheckbox\np3\nsVid\np4\nVstirrer-button\np5\nsVclass\np6\nVinput-device\np7\ns.')
-    _attrs_4317150160 = _loads('(dp1\nVid\np2\nVcurrent-value\np3\ns.')
-    _attrs_4317130576 = _loads('(dp1\n.')
-    _attrs_4317149776 = _loads('(dp1\nVhref\np2\nV#\nsVid\np3\nVset-calibration-point\np4\ns.')
-    _attrs_4317127568 = _loads('(dp1\nVsrc\np2\nV${request.application_url}/static/js/jquery-1.4.2.min.js\np3\nsVtype\np4\nVtext/javascript\np5\ns.')
-    _attrs_4317129424 = _loads('(dp1\nVhref\np2\nV#\nsVid\np3\nVcalibrate\np4\ns.')
-    _attrs_4317150736 = _loads('(dp1\nVstyle\np2\nVfloat:left; margin:0 7px 20px 0;\np3\nsVclass\np4\nVui-icon ui-icon-alert\np5\ns.')
-    _attrs_4317150544 = _loads('(dp1\n.')
-    _attrs_4317127440 = _loads('(dp1\nVhref\np2\nV${request.application_url}/static/css/default.css\np3\nsVrel\np4\nVstylesheet\np5\nsVtype\np6\nVtext/css\np7\ns.')
-    _attrs_4317150032 = _loads('(dp1\n.')
-    _attrs_4317149648 = _loads('(dp1\n.')
-    _attrs_4317127760 = _loads('(dp1\nVsrc\np2\nV${request.application_url}/static/js/calibration.js\np3\nsVtype\np4\nVtext/javascript\np5\ns.')
-    _attrs_4317127504 = _loads('(dp1\nVhref\np2\nV${request.application_url}/static/css/custom-theme/jquery-ui.css\np3\nsVrel\np4\nVstylesheet\np5\nsVtype\np6\nVtext/css\np7\ns.')
-    _attrs_4317149200 = _loads('(dp1\nVfor\np2\nVfill-valve-button\np3\ns.')
-    _attrs_4317128976 = _loads('(dp1\nVid\np2\nVthermometer-text\np3\nsVclass\np4\nVtext-value\np5\ns.')
-    _attrs_4317128080 = _loads('(dp1\nVid\np2\nVside-bar\np3\ns.')
-    _attrs_4317130064 = _loads('(dp1\n.')
-    _attrs_4317130000 = _loads('(dp1\nVid\np2\nVvolume-target\np3\ns.')
-    _attrs_4317148624 = _loads('(dp1\nVclass\np2\nVbutton\np3\ns.')
-    _attrs_4317147664 = _loads('(dp1\n.')
-    _attrs_4317149520 = _loads('(dp1\nVtype\np2\nVtext\np3\nsVid\np4\nVcalibration-point\np5\ns.')
-    _init_scope = _loads('cchameleon.core.utils\necontext\np1\n.')
-    _attrs_4317127312 = _loads('(dp1\n.')
-    _attrs_4317126928 = _loads('(dp1\n.')
-    _attrs_4317127376 = _loads('(dp1\nVhref\np2\nV${request.application_url}/static/css/ui-lightness/jquery-ui-1.8.6.custom.css\np3\nsVrel\np4\nVstylesheet\np5\nsVtype\np6\nVtext/css\np7\ns.')
-    _attrs_4317128656 = _loads('(dp1\n.')
-    _attrs_4317147536 = _loads('(dp1\n.')
-    _attrs_4317130448 = _loads('(dp1\n.')
-    _attrs_4317149392 = _loads('(dp1\nVstyle\np2\nVwidth:600px;height:300px;\np3\nsVid\np4\nVcalibration-table\np5\ns.')
-    _attrs_4317128592 = _loads('(dp1\n.')
+    _attrs_4358671248 = _loads('(dp1\n.')
+    _attrs_4358669200 = _loads('(dp1\n.')
+    _attrs_4358645584 = _loads('(dp1\nVhref\np2\nV${request.application_url}/static/css/default.css\np3\nsVrel\np4\nVstylesheet\np5\nsVtype\np6\nVtext/css\np7\ns.')
+    _attrs_4358645712 = _loads('(dp1\nVsrc\np2\nV${request.application_url}/static/js/jquery-1.4.2.min.js\np3\nsVtype\np4\nVtext/javascript\np5\ns.')
     _init_tal = _loads('cchameleon.core.generation\ninitialize_tal\np1\n.')
-    _attrs_4317128144 = _loads('(dp1\nVid\np2\nVlineage\np3\ns.')
-    _attrs_4317129488 = _loads('(dp1\nVid\np2\nVvolume-text\np3\nsVclass\np4\nVtext-value\np5\ns.')
-    _attrs_4317149072 = _loads('(dp1\nVtype\np2\nVcheckbox\np3\nsVid\np4\nVfill-valve-button\np5\nsVclass\np6\nVinput-device\np7\ns.')
-    _attrs_4317150288 = _loads('(dp1\nVid\np2\nVclick-data\np3\ns.')
-    _attrs_4317148816 = _loads('(dp1\n.')
-    _attrs_4317148560 = _loads('(dp1\nVfor\np2\nVstirrer-button\np3\ns.')
-    _attrs_4317147344 = _loads('(dp1\nVclass\np2\nVbutton\np3\ns.')
+    _attrs_4358671824 = _loads('(dp1\nVtype\np2\nVtext\np3\nsVid\np4\nVcalibration-point\np5\ns.')
+    _attrs_4358670992 = _loads('(dp1\nVstyle\np2\nVwidth:600px;height:300px;\np3\nsVid\np4\nVcalibration\np5\ns.')
+    _attrs_4358670480 = _loads('(dp1\n.')
+    _attrs_4358647184 = _loads('(dp1\nVid\np2\nVthermometer-text\np3\nsVclass\np4\nVtext-value\np5\ns.')
+    _attrs_4358645456 = _loads('(dp1\n.')
+    _attrs_4358645648 = _loads('(dp1\nVhref\np2\nV${request.application_url}/static/css/custom-theme/jquery-ui.css\np3\nsVrel\np4\nVstylesheet\np5\nsVtype\np6\nVtext/css\np7\ns.')
+    _attrs_4358647056 = _loads('(dp1\n.')
+    _attrs_4358646544 = _loads('(dp1\n.')
+    _attrs_4358647568 = _loads('(dp1\n.')
+    _attrs_4358669648 = _loads('(dp1\nVclass\np2\nVbutton\np3\ns.')
+    _attrs_4358646032 = _loads('(dp1\nVtype\np2\nVtext/javascript\np3\ns.')
+    _attrs_4358668752 = _loads('(dp1\nVid\np2\nVvolume-target\np3\ns.')
+    _attrs_4358647248 = _loads('(dp1\nVid\np2\nVthermometer\np3\ns.')
+    _attrs_4358647120 = _loads('(dp1\nVhref\np2\nV#\nsVdevice\np3\nVtemperature\np4\nsVid\np5\nVcalibrate-temperature\np6\ns.')
+    _attrs_4358672336 = _loads('(dp1\n.')
+    _attrs_4358646608 = _loads('(dp1\nVclass\np2\nVdevice\np3\ns.')
+    _attrs_4358668496 = _loads('(dp1\n.')
+    _attrs_4358672080 = _loads('(dp1\nVhref\np2\nV#\nsVid\np3\nVset-calibration-point\np4\ns.')
+    _attrs_4358647632 = _loads('(dp1\nVhref\np2\nV#\nsVdevice\np3\nVvolume\np4\nsVid\np5\nVcalibrate-volume\np6\ns.')
+    _attrs_4358645904 = _loads('(dp1\nVsrc\np2\nV${request.application_url}/static/js/calibration.js\np3\nsVtype\np4\nVtext/javascript\np5\ns.')
+    _attrs_4358645392 = _loads('(dp1\n.')
+    _attrs_4358669328 = _loads('(dp1\n.')
+    _attrs_4358684944 = _loads('(dp1\nVid\np2\nVclick-data\np3\ns.')
+    _attrs_4358646800 = _loads('(dp1\n.')
+    _attrs_4358670864 = _loads('(dp1\nVfor\np2\nVstirrer-button\np3\ns.')
+    _init_scope = _loads('cchameleon.core.utils\necontext\np1\n.')
+    _attrs_4358646672 = _loads('(dp1\nVclass\np2\nVdevice\np3\ns.')
+    _attrs_4358646928 = _loads('(dp1\nVfor\np2\nVmode-button\np3\ns.')
+    _attrs_4358671120 = _loads('(dp1\n.')
+    _attrs_4358646736 = _loads('(dp1\n.')
+    _attrs_4358646992 = _loads('(dp1\nVclass\np2\nVdevice\np3\ns.')
+    _attrs_4358669968 = _loads('(dp1\n.')
+    _attrs_4358668368 = _loads('(dp1\nVid\np2\nVvolume\np3\ns.')
+    _attrs_4358669840 = _loads('(dp1\n.')
+    _attrs_4358646864 = _loads('(dp1\nVtype\np2\nVcheckbox\np3\nsVid\np4\nVmode-button\np5\ns.')
+    _attrs_4358670224 = _loads('(dp1\nVfor\np2\nVcooler-button\np3\ns.')
+    _attrs_4358670288 = _loads('(dp1\nVclass\np2\nVbutton\np3\ns.')
+    _attrs_4358669584 = _loads('(dp1\nVfor\np2\nVburner-button\np3\ns.')
+    _attrs_4358668816 = _loads('(dp1\n.')
+    _attrs_4358685200 = _loads('(dp1\n.')
     def render(econtext, rcontext=None):
         macros = econtext.get('macros')
         _translate = econtext.get('_translate')
@@ -92,11 +93,11 @@ def bind():
         default = None
         u'None'
         _domain = None
-        attrs = _attrs_4317126928
+        attrs = _attrs_4358645200
         _write(u'<html>\n  ')
-        attrs = _attrs_4317127248
+        attrs = _attrs_4358645392
         _write(u'<head>\n    ')
-        attrs = _attrs_4317127376
+        attrs = _attrs_4358645520
         "join(value('request.application_url'), u'/static/css/ui-lightness/jquery-ui-1.8.6.custom.css')"
         _write(u'<link')
         _tmp1 = ('%s%s' % (_lookup_attr(econtext['request'], 'application_url'), u'/static/css/ui-lightness/jquery-ui-1.8.6.custom.css', ))
@@ -121,7 +122,7 @@ def bind():
                 _tmp1 = _tmp1.replace('"', '&quot;')
             _write(((' href="' + _tmp1) + '"'))
         _write(u' rel="stylesheet" type="text/css" />\n    ')
-        attrs = _attrs_4317127440
+        attrs = _attrs_4358645584
         _write(u'<link')
         default = u'${request.application_url}/static/css/default.css'
         "join(value('request.application_url'), u'/static/css/default.css')"
@@ -148,7 +149,7 @@ def bind():
                 _tmp1 = _tmp1.replace('"', '&quot;')
             _write(((' href="' + _tmp1) + '"'))
         _write(u' rel="stylesheet" type="text/css" />\n    ')
-        attrs = _attrs_4317127504
+        attrs = _attrs_4358645648
         "join(value('request.application_url'), u'/static/css/custom-theme/jquery-ui.css')"
         _write(u'<link')
         _tmp1 = ('%s%s' % (_lookup_attr(econtext['request'], 'application_url'), u'/static/css/custom-theme/jquery-ui.css', ))
@@ -173,7 +174,7 @@ def bind():
                 _tmp1 = _tmp1.replace('"', '&quot;')
             _write(((' href="' + _tmp1) + '"'))
         _write(u' rel="stylesheet" type="text/css" />\n    ')
-        attrs = _attrs_4317127568
+        attrs = _attrs_4358645712
         "join(value('request.application_url'), u'/static/js/jquery-1.4.2.min.js')"
         _write(u'<script type="text/javascript"')
         _tmp1 = ('%s%s' % (_lookup_attr(econtext['request'], 'application_url'), u'/static/js/jquery-1.4.2.min.js', ))
@@ -198,7 +199,7 @@ def bind():
                 _tmp1 = _tmp1.replace('"', '&quot;')
             _write(((' src="' + _tmp1) + '"'))
         _write(u'></script>\n    ')
-        attrs = _attrs_4317127632
+        attrs = _attrs_4358645776
         "join(value('request.application_url'), u'/static/js/jquery-ui-1.8.6.custom.min.js')"
         _write(u'<script type="text/javascript"')
         _tmp1 = ('%s%s' % (_lookup_attr(econtext['request'], 'application_url'), u'/static/js/jquery-ui-1.8.6.custom.min.js', ))
@@ -223,7 +224,7 @@ def bind():
                 _tmp1 = _tmp1.replace('"', '&quot;')
             _write(((' src="' + _tmp1) + '"'))
         _write(u'></script>\n    ')
-        attrs = _attrs_4317127696
+        attrs = _attrs_4358645840
         "join(value('request.application_url'), u'/static/js/tank.js')"
         _write(u'<script type="text/javascript"')
         _tmp1 = ('%s%s' % (_lookup_attr(econtext['request'], 'application_url'), u'/static/js/tank.js', ))
@@ -248,7 +249,7 @@ def bind():
                 _tmp1 = _tmp1.replace('"', '&quot;')
             _write(((' src="' + _tmp1) + '"'))
         _write(u'></script>\n    ')
-        attrs = _attrs_4317127760
+        attrs = _attrs_4358645904
         "join(value('request.application_url'), u'/static/js/calibration.js')"
         _write(u'<script type="text/javascript"')
         _tmp1 = ('%s%s' % (_lookup_attr(econtext['request'], 'application_url'), u'/static/js/calibration.js', ))
@@ -273,7 +274,7 @@ def bind():
                 _tmp1 = _tmp1.replace('"', '&quot;')
             _write(((' src="' + _tmp1) + '"'))
         _write(u'></script>\n     ')
-        attrs = _attrs_4317127824
+        attrs = _attrs_4358645968
         "join(value('request.application_url'), u'/static/js/flot/jquery.flot.js')"
         _write(u'<script language="javascript" type="text/javascript"')
         _tmp1 = ('%s%s' % (_lookup_attr(econtext['request'], 'application_url'), u'/static/js/flot/jquery.flot.js', ))
@@ -298,7 +299,7 @@ def bind():
                 _tmp1 = _tmp1.replace('"', '&quot;')
             _write(((' src="' + _tmp1) + '"'))
         _write(u'></script>\n    ')
-        attrs = _attrs_4317127888
+        attrs = _attrs_4358646032
         u'state_url'
         _write(u'<script type="text/javascript">\n      var stateUrl = "')
         _tmp1 = econtext['state_url']
@@ -456,11 +457,11 @@ def bind():
                 _tmp = _tmp.replace('>', '&gt;')
             _write(_tmp)
         _write(u'";\n    </script>\n  </head>\n  ')
-        attrs = _attrs_4317127312
+        attrs = _attrs_4358645456
         _write(u'<body>\n    ')
-        attrs = _attrs_4317128016
+        attrs = _attrs_4358646160
         _write(u'<div id="header">\n      ')
-        attrs = _attrs_4317128144
+        attrs = _attrs_4358646288
         u"''"
         _write(u'<div id="lineage">')
         _default.value = default = ''
@@ -483,11 +484,11 @@ def bind():
                 _tmp = str(_tmp)
             _write(_tmp)
         _write(u'</div>\n    </div>\n    ')
-        attrs = _attrs_4317128080
+        attrs = _attrs_4358646224
         _write(u'<div id="side-bar">\n    </div>\n    ')
-        attrs = _attrs_4317128208
+        attrs = _attrs_4358646352
         _write(u'<div id="main-content">\n      ')
-        attrs = _attrs_4317128400
+        attrs = _attrs_4358646544
         u'name'
         _write(u'<h1>')
         _tmp1 = econtext['name']
@@ -515,141 +516,143 @@ def bind():
                 _tmp = _tmp.replace('>', '&gt;')
             _write(_tmp)
         _write(u'</h1>\n      ')
-        attrs = _attrs_4317128464
+        attrs = _attrs_4358646608
         _write(u'<div class="device">\n        ')
-        attrs = _attrs_4317128592
+        attrs = _attrs_4358646736
         _write(u'<a>Mode</a>')
-        attrs = _attrs_4317128656
+        attrs = _attrs_4358646800
         _write(u'<br />\n        ')
-        attrs = _attrs_4317128720
+        attrs = _attrs_4358646864
         _write(u'<input type="checkbox" id="mode-button" />')
-        attrs = _attrs_4317128784
+        attrs = _attrs_4358646928
         u" 'temperature' in devices"
         _write(u'<label for="mode-button">Receive</label>\n      </div>\n      ')
         _tmp1 = ('temperature' in econtext['devices'])
         if _tmp1:
             pass
-            attrs = _attrs_4317128528
+            attrs = _attrs_4358646672
             _write(u'<div class="device">\n        ')
-            attrs = _attrs_4317128912
+            attrs = _attrs_4358647056
             _write(u'<a>Temperature</a>')
-            attrs = _attrs_4317128976
+            attrs = _attrs_4358647120
+            _write(u'<a href="#" id="calibrate-temperature" device="temperature"> calibrate</a>')
+            attrs = _attrs_4358647184
             _write(u'<a id="thermometer-text" class="text-value">0</a>\n        ')
-            attrs = _attrs_4317129040
+            attrs = _attrs_4358647248
             _write(u'<div id="thermometer"></div>\n        ')
-            attrs = _attrs_4317129104
+            attrs = _attrs_4358647312
             _write(u'<a>Temperature Target</a>')
-            attrs = _attrs_4317129168
+            attrs = _attrs_4358647376
             _write(u'<a id="thermometer-target-text" class="text-value input-device">0</a>\n        ')
-            attrs = _attrs_4317129232
+            attrs = _attrs_4358647440
             _write(u'<div id="thermometer-target"></div>\n      </div>')
         u" 'volume' in devices"
         _write(u'\n      ')
         _tmp1 = ('volume' in econtext['devices'])
         if _tmp1:
             pass
-            attrs = _attrs_4317128848
+            attrs = _attrs_4358646992
             _write(u'<div class="device">\n        ')
-            attrs = _attrs_4317129360
+            attrs = _attrs_4358647568
             _write(u'<a>Volume</a>')
-            attrs = _attrs_4317129424
-            _write(u'<a href="#" id="calibrate"> calibrate</a>')
-            attrs = _attrs_4317129488
+            attrs = _attrs_4358647632
+            _write(u'<a href="#" id="calibrate-volume" device="volume"> calibrate</a>')
+            attrs = _attrs_4358647696
             _write(u'<a id="volume-text" class="text-value">0</a>\n        ')
-            attrs = _attrs_4317129616
+            attrs = _attrs_4358668368
             _write(u'<div id="volume"></div>\n        ')
-            attrs = _attrs_4317129744
+            attrs = _attrs_4358668496
             _write(u'<a>Volume Target</a>')
-            attrs = _attrs_4317129872
+            attrs = _attrs_4358668624
             _write(u'<a id="volume-target-text" class="text-value input-device">0</a>\n        ')
-            attrs = _attrs_4317130000
+            attrs = _attrs_4358668752
             _write(u'<div id="volume-target"></div>\n      </div>')
         _write(u'\n      ')
-        attrs = _attrs_4317130064
+        attrs = _attrs_4358668816
         u" 'burner' in devices"
         _write(u'<div>\n        ')
         _tmp1 = ('burner' in econtext['devices'])
         if _tmp1:
             pass
-            attrs = _attrs_4317130256
+            attrs = _attrs_4358669008
             _write(u'<span class="button">\n          ')
-            attrs = _attrs_4317130448
+            attrs = _attrs_4358669200
             _write(u'<a>Burner</a>')
-            attrs = _attrs_4317130576
+            attrs = _attrs_4358669328
             _write(u'<br />\n          ')
-            attrs = _attrs_4317130704
+            attrs = _attrs_4358669456
             _write(u'<input type="checkbox" id="burner-button" class="input-device" />')
-            attrs = _attrs_4317147280
+            attrs = _attrs_4358669584
             _write(u'<label for="burner-button">Off</label>\n        </span>')
         u" 'cooler' in devices"
         _write(u'\n        ')
         _tmp1 = ('cooler' in econtext['devices'])
         if _tmp1:
             pass
-            attrs = _attrs_4317147344
+            attrs = _attrs_4358669648
             _write(u'<span class="button">\n          ')
-            attrs = _attrs_4317147536
+            attrs = _attrs_4358669840
             _write(u'<a>Cooler</a>')
-            attrs = _attrs_4317147664
+            attrs = _attrs_4358669968
             _write(u'<br />\n          ')
-            attrs = _attrs_4317147792
+            attrs = _attrs_4358670096
             _write(u'<input type="checkbox" id="cooler-button" class="input-device" />')
-            attrs = _attrs_4317147920
+            attrs = _attrs_4358670224
             _write(u'<label for="cooler-button">Off</label>\n        </span>')
         u" 'stirrer' in devices"
         _write(u'\n        ')
         _tmp1 = ('stirrer' in econtext['devices'])
         if _tmp1:
             pass
-            attrs = _attrs_4317147984
+            attrs = _attrs_4358670288
             _write(u'<span class="button">\n          ')
-            attrs = _attrs_4317148176
+            attrs = _attrs_4358670480
             _write(u'<a>Stirrer</a>')
-            attrs = _attrs_4317148304
+            attrs = _attrs_4358670608
             _write(u'<br />\n          ')
-            attrs = _attrs_4317148432
+            attrs = _attrs_4358670736
             _write(u'<input type="checkbox" id="stirrer-button" class="input-device" />')
-            attrs = _attrs_4317148560
+            attrs = _attrs_4358670864
             _write(u'<label for="stirrer-button">Off</label>\n        </span>')
         u" 'fill_valve' in devices"
         _write(u'\n        ')
         _tmp1 = ('fill_valve' in econtext['devices'])
         if _tmp1:
             pass
-            attrs = _attrs_4317148624
+            attrs = _attrs_4358670928
             _write(u'<span class="button">\n          ')
-            attrs = _attrs_4317148816
+            attrs = _attrs_4358671120
             _write(u'<a>Fill Valve</a>')
-            attrs = _attrs_4317148944
+            attrs = _attrs_4358671248
             _write(u'<br />\n          ')
-            attrs = _attrs_4317149072
+            attrs = _attrs_4358671376
             _write(u'<input type="checkbox" id="fill-valve-button" class="input-device" />')
-            attrs = _attrs_4317149200
+            attrs = _attrs_4358671504
             _write(u'<label for="fill-valve-button">Off</label>\n        </span>')
         _write(u'\n      </div>\n      ')
-        attrs = _attrs_4317148688
+        attrs = _attrs_4358670992
         _write(u'<div id="calibration" style="width:600px;height:300px;">\n        ')
-        attrs = _attrs_4317149392
+        attrs = _attrs_4358671696
         _write(u'<div id="calibration-table" style="width:600px;height:300px;">\n        </div>\n        ')
-        attrs = _attrs_4317149520
+        attrs = _attrs_4358671824
         _write(u'<input type="text" id="calibration-point" />')
-        attrs = _attrs_4317149648
+        attrs = _attrs_4358671952
         _write(u'<br />\n          ')
-        attrs = _attrs_4317149776
+        attrs = _attrs_4358672080
         _write(u'<a id="set-calibration-point" href="#">set calibration point</a>')
-        attrs = _attrs_4317149904
+        attrs = _attrs_4358672208
         _write(u'<br />\n          ')
-        attrs = _attrs_4317150032
+        attrs = _attrs_4358672336
         _write(u'<a>Current Value: </a>')
-        attrs = _attrs_4317150160
+        attrs = _attrs_4358684816
         _write(u'<a id="current-value">0</a>\n          ')
-        attrs = _attrs_4317150288
+        attrs = _attrs_4358684944
         _write(u'<a id="click-data"></a>\n      </div>\n      ')
-        attrs = _attrs_4317150352
+        attrs = _attrs_4358685008
         _write(u'<div id="dialog-confirm" title="Delete data point?">\n\t')
-        attrs = _attrs_4317150544
+        attrs = _attrs_4358685200
         _write(u'<p>')
-        attrs = _attrs_4317150736
+        attrs = _attrs_4358685392
         _write(u'<span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>Are you sure you want to delete?</p>\n      </div>\n    </div><!--main content-->\n  </body>\n</html>')
         return _out.getvalue()
     return render

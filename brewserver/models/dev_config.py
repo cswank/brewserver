@@ -1,13 +1,13 @@
-from pyrobot.brewery.devices import Thermometer, LevelIndicator, Stirrer, ElectricBurner, ValveSwitch, Cooler
+from pyrobot.brewery.devices import Thermometer, LevelIndicator, Stirrer, ElectricBurner, ValveSwitch, Cooler, SignalConverter
+from pyrobot.driver.arduino import Arduino
 from pyrobot.brewery.tests.mock_driver import MockDriver
 
-config = {
+dev_config = {
     'io_device': {
         'class': MockDriver,
-        'kw': {'random': False},
+        'kw':{},
         },
     'devices': {
-        
         },
     'tanks' : {
         'hlt' : {
@@ -15,12 +15,21 @@ config = {
                 'temperature' : {
                     'class': Thermometer,
                     'channel' : 0,
-                    'calibration_data' : None,
-                    },
+                    'channel' : 0,
+                    'converter': {
+                        'class':SignalConverter,
+                        'calibration_data':[[0, 0.0], [100.0, 100.0]],
+                        'max':100.0,                        
+                        }
+                    },                    
                 'volume' : {
                     'class': LevelIndicator,
-                    'channel' : 3,
-                    'calibration_data' : [[31, 0.0], [1023, 50.0]],
+                    'channel' : 1,
+                    'converter': {
+                        'class':SignalConverter,
+                        'calibration_data':[[0, 0.0], [1024, 20.0]],
+                        'max':1024,                        
+                        }
                     },
                 },
             'output_devices' : {
@@ -42,13 +51,21 @@ config = {
             'input_devices': {
                 'temperature' : {
                     'class': Thermometer,
-                    'channel' : 1,
-                    'calibration_data' : None,
+                    'channel' : 2,
+                    'converter': {
+                        'class':SignalConverter,
+                        'calibration_data':[[0, 0.0], [100.0, 100.0]],
+                        'max':100.0,                        
+                        }                    
                     },
                 'volume' : {
                     'class': LevelIndicator,
-                    'channel' : 4,
-                    'calibration_data' : [[0, 0.0], [255, 5.0]],
+                    'channel' : 3,
+                    'converter': {
+                        'class':SignalConverter,
+                        'calibration_data':[[0, 0.0], [100.0, 100.0]],
+                        'max':100.0,                        
+                        }                    
                     },
                 },
             'output_devices' : {
@@ -70,13 +87,21 @@ config = {
             'input_devices': {
                 'temperature' : {
                     'class': Thermometer,
-                    'channel' : 2,
-                    'calibration_data' : None,
+                    'channel' : 4,
+                    'converter': {
+                        'class':SignalConverter,
+                        'calibration_data':[[0, 0.0], [100.0, 100.0]],
+                        'max':100.0,
+                        }                                        
                     },
                 'volume' : {
                     'class': LevelIndicator,
                     'channel' : 5,
-                    'calibration_data' : [[0, 0.0], [255, 5.0]],
+                    'converter': {
+                        'class':SignalConverter,
+                        'calibration_data':[[0, 0.0], [100.0, 100.0]],
+                        'max':100.0,                        
+                        }                    
                     },
                 },
             'output_devices' : {
@@ -107,8 +132,11 @@ config = {
                     'channel' : 11,
                     }
                 }
-            
             },
         },
     }
+
+
+
+
 

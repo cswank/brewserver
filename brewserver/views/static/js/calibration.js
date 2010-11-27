@@ -1,5 +1,6 @@
 var timeoutId;
 var calPlot;
+var device;
 
 function handleCalibrationState(data) {
     $('#current-value').text(data.volume.toFixed(2));
@@ -21,7 +22,8 @@ function handleCurve(data) {
            }
           );
     $("#calibration-table").bind("plotclick", function (event, pos, item) {
-        if (item) {
+     
+   if (item) {
             deletePoint(item.dataIndex);
         }
     });
@@ -29,12 +31,13 @@ function handleCurve(data) {
 }
 
 function getCurve() {
-    $.get(calibrationCurveUrl, handleCurve);
+    $.get(calibrationCurveUrl, {device:device}, handleCurve);
 }
 
 
 function handleCalibrate() {
     $('#calibration').dialog('open');
+    device = $(this).attr('device');
     timeoutId = setTimeout(getCalibationState, 1000);
     getCurve();
 }
@@ -54,7 +57,7 @@ function deletePoint(point) {
 	modal: true,
 	buttons: {
 	    "Delete point": function() {
-		$.get(deletePointUrl, {point:point}, handleDelete);
+		$.get(deletePointUrl, {point:point, device:device}, handleDelete);
                 $(this).dialog( "close" );
 	    },
 	    Cancel: function() {
@@ -67,13 +70,15 @@ function deletePoint(point) {
 function setCalibrationPoint() {
     data = {
         set_point:$('#calibration-point').val(),
+        device:device,
     }
     $.get(savePointUrl, data, getCurve);
 }
 
 $(document).ready(function(){
     $( "#calibration").bind( "dialogclose", handleCalibrateClose);
-    $('#calibrate').click(handleCalibrate);
+    $('#calibrate-volume').click(handleCalibrate);
+    $('#calibrate-temperature').click(handleCalibrate);
     $('#dialog-confirm').hide();
     $('#set-calibration-point').click(setCalibrationPoint);
 });

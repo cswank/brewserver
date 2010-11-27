@@ -1,6 +1,8 @@
 from pyrobot.brewery.devices import Thermometer, LevelIndicator, Stirrer, ElectricBurner, ValveSwitch, Cooler
 from pyrobot.driver.arduino import Arduino
 
+
+
 config = {
     'io_device': {
         'class': Arduino,
@@ -81,19 +83,19 @@ config = {
             'output_devices' : {
                 'fill_valve' : {
                     'class': ValveSwitch,
-                    'channel' : 7,
+                    'channel' : 6,
                     },
                 'burner' : {
                     'class': ElectricBurner,
-                    'channel' : 8,
+                    'channel' : 7,
                     },
                 'cooler' : {
                     'class': Cooler,
-                    'channel' : 9,
+                    'channel' : 8,
                     },
                 'stirrer' : {
                     'class': Stirrer,
-                    'channel' : 10,
+                    'channel' : 9,
                     }
                 }
             },
@@ -103,7 +105,7 @@ config = {
             'output_devices' : {
                 'fill_valve' : {
                     'class': ValveSwitch,
-                    'channel' : 11,
+                    'channel' : 10,
                     }
                 }
             

@@ -7,6 +7,15 @@
      context="...models.FrontPage"
      view=".view.FrontPageView"
      renderer="templates/front_page.pt"
+     permission="view"
+     />
+
+  <view
+     context="...models.FrontPage"
+     view=".view.BreweryView"
+     renderer="templates/brewery.pt"
+     name="brewery"
+     permission="view"
      />
 
   <view

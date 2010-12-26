@@ -1,35 +1,35 @@
 from pyramid.settings import get_settings
-from pyrobot.brewery import Factory
-from .config import config
-from pyrobot.brewery.tests.mock_driver import MockDriver
+#from pyrobot.brewery import Factory
+#from .config import config
+#from pyrobot.brewery.tests.mock_driver import MockDriver
 from .tank import Tank
 from peak.util.imports import importString
 from pyramid.security import Allow, Authenticated
 
 class FrontPage(object):
 
+    __parent__ = None
+    __name__ = ''
+
     __acl__ = [
         (Allow, Authenticated, 'view'),
         ]
-
-    __parent__ = None
-    __name__ = ''
     
     def __init__(self):
         self._brewery = None
 
     @property
     def state(self):
-        return self.brewery.json_state
+        return self.brewery.state
 
     @property
     def brewery(self):
+        return None
         if self._brewery is not None:
             return self._brewery
         config = self.config
         f = Factory(config)
-        brewery = f.brewery
-        self._brewery = brewery
+        self._brewery = f.brewery
         self._brewery.tanks['hlt'].devices['thermometer'].io_device.analog_channels[2] = 77
         return self._brewery
 

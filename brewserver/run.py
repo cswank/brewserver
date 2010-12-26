@@ -1,4 +1,6 @@
 from pyramid.configuration import Configurator
+from pyramid.authorization import ACLAuthorizationPolicy
+from pyramid.authentication import RepozeWho1AuthenticationPolicy
 from .models import get_root
 
 def app(global_config, **settings):
@@ -9,9 +11,15 @@ def app(global_config, **settings):
     """
     
     zcml_file = settings.get('configure_zcml', 'configure.zcml')
-    config = Configurator(
+
+    auth = RepozeWho1AuthenticationPolicy(identifier_name='basicauth')
+    acl = ACLAuthorizationPolicy()
+
+    config =  Configurator(
         root_factory=get_root,
         settings=settings,
+        authorization_policy = acl,
+        authentication_policy = auth,
         )
     config.begin()
     config.load_zcml(zcml_file)

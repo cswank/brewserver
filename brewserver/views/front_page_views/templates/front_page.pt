@@ -10,12 +10,12 @@
     </script>
   </head>
   <body>
-    <div id="header">
+    <header>
       <div id="lineage"><a tal:replace="structure lineage"></a></div>
-    </div>
+    </header>
     <div id="side-bar">
     </div>
-    <div id="main-content">
+    <section id="main">
       <h1>Tanks</h1>
       <table>
         <tr>
@@ -39,6 +39,6 @@
           <td><a id="fermenter-volume"></a></td>
         </tr>
       </table>
-    </div>
+    </section>
   </body>
 </html>

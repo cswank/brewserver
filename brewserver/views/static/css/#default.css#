@@ -40,7 +40,7 @@ Released for free under a Creative Commons Attribution 2.5 License
     width:600px;
     height:800px;
     border-style:solid;
-    border-width:thin;
+    border-width:1px;x
     margin:5px;
 }
 
@@ -49,7 +49,6 @@ Released for free under a Creative Commons Attribution 2.5 License
     width:200px;
     height:300px;
     border-style:solid;
-    border-width:thin;
     margin:5px;
 }
 

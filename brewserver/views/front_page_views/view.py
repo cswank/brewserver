@@ -11,6 +11,14 @@ class FrontPageView(BaseView):
             'state_url': model_url(context, request, 'state.json'),
             }
 
+class BreweryView(BaseView):
+
+    def __init__(self, context, request):
+        super(BreweryView, self).__init__(context, request)
+        self.response = {
+            
+            }
+
 class StateView(BaseView):
     
     def __init__(self, context, request):

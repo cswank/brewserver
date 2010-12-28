@@ -1,4 +1,5 @@
 var droppedTank;
+var editedDevice;
 
 var classes = {
     'Thermometer': 'pyrobot.brewery.devices:Thermometer',
@@ -11,7 +12,7 @@ var classes = {
 
 var analogDevices = ['Thermometer', 'Gauge'];
 var inputDevices = [];
-var outputDevices = ['IntermittentStirrer', 'Electric Burner', 'Cooler', 'Fill Valve'];
+var outputDevices = ['Intermittent Stirrer', 'Electric Burner', 'Cooler', 'Fill Valve'];
 
 var analogChannels = 0;
 var intputChannels = 0;
@@ -20,14 +21,45 @@ var outputChannels = 0;
 function getChannel(name) {
     var i = analogDevices.indexOf(name);
     var returnValue;
-    if (name != -1) 
+    if (i != -1) 
         return analogChannels++;
     i = outputDevices.indexOf(name); 
-    if (name != -1)
+    if (i != -1)
         return outputChannels++;
     i = inputDevices.indexOf(name);
-    if (name != -1)
+    if (i != -1)
         return inputChannels++;
+}
+
+function handleDeviceForm() {
+    editedDevice.attr('channel', $('input[name="channel"]').val());
+    editedDevice.attr('device-class', $('input[name="device-class"]').val());
+    $('#new-device-form').dialog('close');
+}
+
+function handleDeviceClick() {
+    var em = $(this);
+    editedDevice = em;
+    $('input[name="device-class"]').val(em.attr('device-class'));
+    $('input[name="channel"]').val(em.attr('channel'));
+    $('#new-device-form').dialog({
+	autoOpen: true,
+	height: 220,
+	width: 750,
+	modal: true,
+        close:function() {
+            $('#device-class').val('');
+            $('#channel').val('');
+        },
+	buttons: {
+	    "Ok": handleDeviceForm,
+	    "Cancel": function() {
+                $('#device-class').val("");
+                $('#channel').val("");
+		$(this).dialog("close");
+	    }
+	},
+    });
 }
 
 function handleDeviceDrop(event, ui) {
@@ -40,7 +72,7 @@ function handleDeviceDrop(event, ui) {
     var channel = getChannel(name);
     clone.attr('device-class', deviceClass);
     clone.attr('channel', channel);
-    clone.click(function(){$('#new-device-form').dialog('open')});
+    clone.click(handleDeviceClick);
 }
 
 function handleTankName() {
@@ -60,9 +92,7 @@ function handleTankDrop(event, ui) {
     $('#new-tank-form').dialog('open');
 }
 
-function handleDeviceForm() {
-    return false;
-}
+
 
 $(document).ready(function() {
     $( "#new-tank" ).draggable({ opacity: 0.7, helper: "clone" });
@@ -88,24 +118,7 @@ $(document).ready(function() {
 	    }
 	},
     });
-    $('#new-device-form').dialog({
-	autoOpen: false,
-	height: 300,
-	width: 350,
-	modal: true,
-        close:function() {
-            $('#device-class').val( "" );
-            $('#channel').val( "" );
-        },
-	buttons: {
-	    "Ok": handleDeviceForm,
-	    "Cancel": function() {
-                $('#device-class').val( "" );
-                $('#channel').val( "" );
-		$( this ).dialog( "close" );
-	    }
-	},
-    });
+    $('#new-device-form').hide();
 });
 
 

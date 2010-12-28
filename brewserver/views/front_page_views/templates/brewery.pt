@@ -48,10 +48,10 @@
       </div>
       <div id="new-device-form">
         <form>
-          <label for="class">class</label>
-          <input type="text" name="device-class"/><br/>
-          <label for="class">channel</label>
-          <input type="text" name="device-class"/>
+          <label class="form-label" for="class">class:</label>
+          <input type="text" name="device-class" size="50"/><br/>
+          <label class="form-label" for="class">channel:</label>
+          <input type="text" name="channel" size="2"/>
         </form>
       </div>
     </section>

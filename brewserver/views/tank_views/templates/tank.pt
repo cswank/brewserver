@@ -7,7 +7,7 @@
     <script type="text/javascript" src="${request.application_url}/static/js/jquery-ui-1.8.6.custom.min.js"></script>
     <script type="text/javascript" src="${request.application_url}/static/js/tank.js"></script>
     <script type="text/javascript" src="${request.application_url}/static/js/calibration.js"></script>
-     <script language="javascript" type="text/javascript" src="${request.application_url}/static/js/flot/jquery.flot.js"></script>
+    <script language="javascript" type="text/javascript" src="${request.application_url}/static/js/flot/jquery.flot.js"></script>
     <script type="text/javascript">
       var stateUrl = "${state_url}";
       var name = "${name}";
@@ -29,17 +29,23 @@
         <a>Mode</a><br/>
         <input type="checkbox" id="mode-button" /><label for="mode-button">Receive</label>
       </div>
-      <div tal:condition="python: 'temperature' in devices" class="device">
-        <a>Temperature</a><a href="#" id="calibrate-temperature" device="temperature"> calibrate</a><a id="thermometer-text" class="text-value">0</a>
-        <div id="thermometer"></div>
-        <a>Temperature Target</a><a id="thermometer-target-text" class="text-value input-device">0</a>
-        <div id="thermometer-target"></div>
-      </div>
-      <div tal:condition="python: 'volume' in devices" class="device">
-        <a>Volume</a><a href="#" id="calibrate-volume" device="volume"> calibrate</a><a id="volume-text" class="text-value">0</a>
-        <div id="volume"></div>
-        <a>Volume Target</a><a id="volume-target-text" class="text-value input-device">0</a>
-        <div id="volume-target"></div>
+      <div id="analog-div">
+        <div id="volume-div" tal:condition="python: 'volume' in devices" class="device">
+          <a>Volume</a><a href="#" id="calibrate-volume" device="volume"> calibrate</a><a id="volume-text" class="text-value">0</a>
+          <div id="volume"></div>
+          <a>Set Point</a><a id="volume-target-text" class="text-value input-device">0</a>
+          <div id="volume-target"></div>
+          <div class="analog-history" id="volume-table">
+          </div>
+        </div>
+        <div id="temperature-div" tal:condition="python: 'temperature' in devices" class="device">
+          <a>Temperature</a><a href="#" id="calibrate-temperature" device="temperature"> calibrate</a><a id="thermometer-text" class="text-value">0</a>
+          <div id="thermometer"></div>
+          <a>Set Point</a><a id="thermometer-target-text" class="text-value input-device">0</a>
+          <div id="thermometer-target"></div>
+          <div class="analog-history" id="temperature-table">
+          </div>
+        </div>
       </div>
       <div>
         <span tal:condition="python: 'burner' in devices" class="button">

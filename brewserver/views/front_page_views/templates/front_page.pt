@@ -5,6 +5,7 @@
     <link href="${request.application_url}/static/css/custom-theme/jquery-ui.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="${request.application_url}/static/js/jquery-1.4.2.min.js"></script>
     <script type="text/javascript" src="${request.application_url}/static/js/frontpage.js"></script>
+    <script language="javascript" type="text/javascript" src="${request.application_url}/static/js/flot/jquery.flot.js"></script>
     <script type="text/javascript">
       var stateUrl = "${state_url}";
     </script>
@@ -16,6 +17,8 @@
     <div id="side-bar">
     </div>
     <section id="main">
+      <div style="width:400px;height:200px" class="analog-history" id="temperature-table"></div>
+      <div style="width:400px;height:200px" class="analog-history" id="volume-table"></div>
       <h1>Tanks</h1>
       <table>
         <tr>

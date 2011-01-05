@@ -33,28 +33,25 @@ function getChannel(name) {
 
 function handleDeviceForm() {
     editedDevice.attr('channel', $('input[name="channel"]').val());
-    editedDevice.attr('device-class', $('input[name="device-class"]').val());
     $('#new-device-form').dialog('close');
 }
 
 function handleDeviceClick() {
     var em = $(this);
     editedDevice = em;
-    $('input[name="device-class"]').val(em.attr('device-class'));
     $('input[name="channel"]').val(em.attr('channel'));
     $('#new-device-form').dialog({
 	autoOpen: true,
-	height: 220,
-	width: 750,
+	height: 180,
+	width: 250,
 	modal: true,
         close:function() {
-            $('#device-class').val('');
-            $('#channel').val('');
+            handleDeviceForm();
+            return false;
         },
 	buttons: {
 	    "Ok": handleDeviceForm,
 	    "Cancel": function() {
-                $('#device-class').val("");
                 $('#channel').val("");
 		$(this).dialog("close");
 	    }
@@ -90,6 +87,7 @@ function handleTankDrop(event, ui) {
         return;
     }
     $('#new-tank-form').dialog('open');
+    $('#tank-name').focus();
 }
 
 
@@ -104,11 +102,12 @@ $(document).ready(function() {
 
     $('#new-tank-form').dialog({
 	autoOpen: false,
-	height: 300,
-	width: 350,
+	height: 180,
+	width: 320,
 	modal: true,
-        close:function() {
-                $('#tank-name').val( "" );
+        close: function() {
+            handleTankName();
+            return false;
         },
 	buttons: {
 	    "Ok": handleTankName,

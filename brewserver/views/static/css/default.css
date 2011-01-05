@@ -44,12 +44,45 @@ Released for free under a Creative Commons Attribution 2.5 License
     margin:5px;
 }
 
-.tank-holder {
-    float:left;
-    width:200px;
-    height:300px;
-    border-style:solid;
-    border-width:thin;
-    margin:5px;
+#brewery-holder h2 {
+    position:absolute;
 }
 
+.tank-holder {
+    float:left;
+    width:150px;
+    height:200px;
+    border-style:solid;
+    border-width:thin;
+    border-radius: 15px;
+    margin:5px;
+    text-align:center;
+    Background:#BFBFBF;
+    -webkit-box-shadow: 10px 10px 5px #888;
+}
+
+#analog-div {
+    width:900px;
+}
+
+#temperature-div{
+    width:400px;
+    border-width:1px; 
+    border-style:solid;
+    padding:20px;
+}
+
+
+#volume-div {
+    float:right;
+    width:400px;
+    border-width:1px; 
+    border-style:solid;
+    padding:20px;
+}
+
+.analog-history {
+    width:400;
+    height:200;
+    padding-top:20px;
+}

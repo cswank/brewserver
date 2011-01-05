@@ -5,7 +5,7 @@ from pyrobot.brewery.tests.mock_driver import MockDriver
 dev_config = {
     'io_device': {
         'class': MockDriver,
-        'kw':{},
+        'kw':{'random':True},
         },
     'devices': {
         },

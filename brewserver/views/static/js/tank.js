@@ -1,7 +1,10 @@
 var burnerButton;
 var timeoutId;
 var temperatureTarget;
+var temperaturePlot;
+var volumePlot;
 var mode = 'receive';
+var counter;
 
 function handleSendCommand(data) {
     
@@ -163,7 +166,21 @@ function getState() {
     $.get(stateUrl, handleState);
 }
 
+function updateTemperaturePlot(data) {
+    temperaturePlot.setData([data.temperature_history]);
+    temperaturePlot.draw();
+    temperaturePlot.setupGrid();
+}
+
+function updateVolumePlot(data) {
+    volumePlot.setData([data.volume_history]);
+    volumePlot.draw();
+    volumePlot.setupGrid();
+}
+
 function handleState(data) {
+    updateTemperaturePlot(data);
+    updateVolumePlot(data);
     $('#thermometer-text').text(data.temperature.toFixed(1));
     $('#thermometer').progressbar({'value': data.temperature});
     $('#volume-text').text(data.volume.toFixed(2));
@@ -181,7 +198,7 @@ function handleState(data) {
     $('#fill-valve-button').button('refresh');
     toggleButton($('#fill-valve-button'));
     $('#thermometer-target').slider({'value': data.target_temperature});
-    var val = data.target_temperature
+    var val = data.target_temperature;
     if (val != undefined)
         val = val.toFixed(1);
     $('#volume-target-text').text(val);
@@ -240,6 +257,24 @@ $(document).ready(function(){
     makeButton('#stirrer-button', handleButton);
     makeButton('#fill-valve-button', handleButton);
     makeButton('#mode-button', handleMode);
+    temperaturePlot = $.plot(
+        $("#temperature-table"), 
+        [{data: [], lines: { show: true }, points:{ show: true }}],
+        {
+            yaxis: {
+                min: 0,
+                max: 100,
+        }
+        });
+    volumePlot = $.plot(
+        $("#volume-table"), 
+        [{data: [], lines: { show: true }, points:{ show: true }}],
+        {
+            yaxis: {
+                min: 0,
+                max: 10,
+        }
+        });
     $.get(stateUrl, handleState);
 });
 

@@ -4,12 +4,12 @@ from .config import config
 from pyrobot.brewery.tests.mock_driver import MockDriver
 from .tank import Tank
 from peak.util.imports import importString
-from pyramid.security import Allow, Authenticated
+from pyramid.security import Allow, Authenticated, Everyone
 
 class FrontPage(object):
 
     __acl__ = [
-        (Allow, Authenticated, 'view'),
+        (Allow, Everyone, 'view'),
         ]
 
     __parent__ = None

@@ -1,12 +1,11 @@
-from pyrobot.brewery.devices import Thermometer, LevelIndicator, Stirrer, ElectricBurner, ValveSwitch, Cooler
+from pyrobot.brewery.devices import Thermometer, LevelIndicator, Stirrer, ElectricBurner, ValveSwitch, Cooler, SignalConverter
 from pyrobot.driver.arduino import Arduino
-
 
 
 config = {
     'io_device': {
         'class': Arduino,
-        'kw': {'port': '/dev/ttyUSB1'},
+        'kw': {'port': '/dev/ttyUSB0'},
         },
     'devices': {
         },
@@ -15,13 +14,21 @@ config = {
             'input_devices': {
                 'temperature' : {
                     'class': Thermometer,
-                    'channel' : 0,
-                    'calibration_data' : None,
+                    'channel' : 1,
+                    'converter': {
+                        'class':SignalConverter,
+                        'calibration_data':[[0, 0.0], [100.0, 100.0]],
+                        'max':100.0,                        
+                        }
                     },
                 'volume' : {
                     'class': LevelIndicator,
                     'channel' : 3,
-                    'calibration_data' : [[40, 0.0], [1023, 50.0]],
+                    'converter': {
+                        'class':SignalConverter,
+                        'calibration_data' : [[5, 0.0], [1023, 10]],
+                        'max':100.0,                        
+                        },
                     },
                 },
             'output_devices' : {
@@ -43,13 +50,21 @@ config = {
             'input_devices': {
                 'temperature' : {
                     'class': Thermometer,
-                    'channel' : 1,
-                    'calibration_data' : None,
+                    'channel' : 0,
+                    'converter': {
+                        'class':SignalConverter,
+                        'calibration_data':[[0, 0.0], [100.0, 100.0]],
+                        'max':100.0,                        
+                        }
                     },
                 'volume' : {
                     'class': LevelIndicator,
                     'channel' : 4,
-                    'calibration_data' : [[0, 0.0], [255, 5.0]],
+                    'converter': {
+                        'class':SignalConverter,
+                        'calibration_data' : [[5, 0.0], [1023, 10]],
+                        'max':100.0,                        
+                        },
                     },
                 },
             'output_devices' : {
@@ -72,12 +87,20 @@ config = {
                 'temperature' : {
                     'class': Thermometer,
                     'channel' : 2,
-                    'calibration_data' : None,
+                    'converter': {
+                        'class':SignalConverter,
+                        'calibration_data':[[0, 0.0], [100.0, 100.0]],
+                        'max':100.0,                        
+                        }
                     },
                 'volume' : {
                     'class': LevelIndicator,
                     'channel' : 5,
-                    'calibration_data' : [[0, 0.0], [255, 5.0]],
+                    'converter': {
+                        'class':SignalConverter,
+                        'calibration_data' : [[5, 0.0], [1023, 10]],
+                        'max':100.0,                        
+                        },
                     },
                 },
             'output_devices' : {

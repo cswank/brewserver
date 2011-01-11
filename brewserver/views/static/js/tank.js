@@ -1,10 +1,14 @@
 var burnerButton;
 var timeoutId;
+var historyTimeoutId;
 var temperatureTarget;
 var temperaturePlot;
 var volumePlot;
+var temperatureHistory = [];
+var volumeHistory = [];
 var mode = 'receive';
-var counter;
+var counter = 0;
+var historyStep = 5;
 
 function handleSendCommand(data) {
     
@@ -166,21 +170,25 @@ function getState() {
     $.get(stateUrl, handleState);
 }
 
-function updateTemperaturePlot(data) {
-    temperaturePlot.setData([data.temperature_history]);
-    temperaturePlot.draw();
-    temperaturePlot.setupGrid();
+function updatePlot(plot, data) {
+    if (data == undefined)
+        return;
+    plot.setData([data]);
+    plot.draw();
+    plot.setupGrid();
 }
 
-function updateVolumePlot(data) {
-    volumePlot.setData([data.volume_history]);
-    volumePlot.draw();
-    volumePlot.setupGrid();
+function handleHistory(data) {
+    updatePlot(volumePlot, data.volume);
+    updatePlot(temperaturePlot, data.temperature);
+    historyTimeoutId = setTimeout(getHistory, 1000 * 60);
+ }
+
+function getHistory() {
+    $.get(historyUrl, handleHistory);
 }
 
 function handleState(data) {
-    updateTemperaturePlot(data);
-    updateVolumePlot(data);
     $('#thermometer-text').text(data.temperature.toFixed(1));
     $('#thermometer').progressbar({'value': data.temperature});
     $('#volume-text').text(data.volume.toFixed(2));
@@ -276,6 +284,7 @@ $(document).ready(function(){
         }
         });
     $.get(stateUrl, handleState);
+    $.get(historyUrl, handleHistory);
 });
 
 

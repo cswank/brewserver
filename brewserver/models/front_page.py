@@ -17,6 +17,7 @@ class FrontPage(object):
     
     def __init__(self):
         self._brewery = None
+        self._db = None
 
     @property
     def state(self):
@@ -30,7 +31,6 @@ class FrontPage(object):
         f = Factory(config)
         brewery = f.brewery
         self._brewery = brewery
-        self._brewery.tanks['hlt'].devices['thermometer'].io_device.analog_channels[2] = 77
         return self._brewery
 
     def __getitem__(self, item):

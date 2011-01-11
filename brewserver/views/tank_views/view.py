@@ -12,6 +12,7 @@ class TankView(BaseView):
             'name': context.name,
             'devices': context.tank.devices.keys(),
             'state_url': model_url(context, request, 'state.json'),
+            'history_url': model_url(context, request, 'history.json'),
             'calibration_curve_url': model_url(context, request, 'curve.json'),
             'send_command_url': model_url(context.__parent__, request, 'set-state'),
             'delete_point_url': model_url(context, request, 'delete-point'),
@@ -54,3 +55,7 @@ class SavePointView(BaseView):
         context.save_calibration_point(set_point, 'volume')
         self.response = Response(content_type="application/json", body=json.dumps({'result':'ok'}))
 
+class HistoryView(BaseView):
+    
+    def __init__(self, context, request):
+        self.response = Response(content_type="application/json", body=json.dumps(context.history))

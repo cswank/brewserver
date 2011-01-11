@@ -15,6 +15,10 @@ class Tank(object):
         return Device(device)
 
     @property
+    def history(self):
+        return self.tank.history
+
+    @property
     def state(self):
         state = self.tank.state
         return state

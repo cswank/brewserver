@@ -17,6 +17,12 @@
 
   <view
      context="...models.Tank"
+     view=".view.HistoryView"
+     name="history.json"
+     />
+
+  <view
+     context="...models.Tank"
      view=".view.CalibrationCurveView"
      name="curve.json"
      />

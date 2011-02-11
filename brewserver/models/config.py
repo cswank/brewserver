@@ -1,4 +1,4 @@
-from pyrobot.brewery.devices import Thermometer, LevelIndicator, Stirrer, ElectricBurner, ValveSwitch, Cooler, SignalConverter
+from pyrobot.brewery.devices import Thermometer, TankGauge, Stirrer, ElectricBurner, ValveSwitch, Cooler, SignalConverter
 from pyrobot.driver.arduino import Arduino
 
 
@@ -22,7 +22,7 @@ config = {
                         }
                     },
                 'volume' : {
-                    'class': LevelIndicator,
+                    'class': TankGauge,
                     'channel' : 3,
                     'converter': {
                         'class':SignalConverter,
@@ -58,7 +58,7 @@ config = {
                         }
                     },
                 'volume' : {
-                    'class': LevelIndicator,
+                    'class': TankGauge,
                     'channel' : 4,
                     'converter': {
                         'class':SignalConverter,
@@ -94,7 +94,7 @@ config = {
                         }
                     },
                 'volume' : {
-                    'class': LevelIndicator,
+                    'class': TankGauge,
                     'channel' : 5,
                     'converter': {
                         'class':SignalConverter,

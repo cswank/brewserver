@@ -17,12 +17,13 @@ class TankView(BaseView):
             'send_command_url': model_url(context.__parent__, request, 'set-state'),
             'delete_point_url': model_url(context, request, 'delete-point'),
             'save_point_url': model_url(context, request, 'save-point'),
+            'notification_url': model_url(context.__parent__, request, 'notify'),
             }
 
 class StateView(BaseView):
     
     def __init__(self, context, request):
-        state = context.state
+        state = context.__parent__.state
         self.response = Response(content_type="application/json", body=json.dumps(state))
 
 

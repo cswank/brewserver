@@ -26,9 +26,11 @@ function updateVolumePlot(data) {
     volumePlot.setupGrid();
 }
 
+function handleNotification(data) {
+    timeoutId = setTimeout(getState, 1000);
+}
+
 function handleState(data) {
-    console.log(data);
-    //data = JSON.parse(data);
     updateVolumePlot(data);
     updateTemperaturePlot(data);
     $('#hlt-temperature').text(data.hlt.temperature.toFixed(1));
@@ -37,7 +39,12 @@ function handleState(data) {
     $('#tun-volume').text(data.tun.volume.toFixed(2));
     $('#boiler-temperature').text(data.boiler.temperature.toFixed(1));
     $('#boiler-volume').text(data.boiler.volume.toFixed(2));
-    timeoutId = setTimeout(getState, 1000);
+    if (data.waiting != undefined) {
+        alert(data.waiting);
+        $.post(notificationUrl, {'post_message':data.waiting}, handleNotification);
+    }
+    else
+        timeoutId = setTimeout(getState, 1000);
 }
 
 function getState() {

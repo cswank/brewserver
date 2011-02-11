@@ -12,9 +12,23 @@
 
   <view
      context="...models.FrontPage"
-     view=".view.BreweryView"
-     renderer="templates/brewery.pt"
-     name="brewery"
+     view=".view.SetupView"
+     renderer="templates/setup.pt"
+     name="setup"
+     permission="view"
+     />
+
+  <view
+     context="...models.FrontPage"
+     view=".view.SaveSetupView"
+     name="save-setup"
+     permission="view"
+     />
+
+  <view
+     context="...models.FrontPage"
+     view=".view.NotificationView"
+     name="notify"
      permission="view"
      />
 

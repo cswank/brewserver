@@ -8,7 +8,7 @@
 
   <static
      name="static"
-     path="static"
+     path="../resources"
      />
 
 </configure>

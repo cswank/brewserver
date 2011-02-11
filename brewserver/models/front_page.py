@@ -1,10 +1,9 @@
-from pyramid.settings import get_settings
+from pyramid.threadlocal import get_current_registry
 from pyrobot.brewery import Factory
 from .config import config
-from pyrobot.brewery.tests.mock_driver import MockDriver
 from .tank import Tank
-from peak.util.imports import importString
 from pyramid.security import Allow, Authenticated, Everyone
+from peak.util.imports import importString
 
 class FrontPage(object):
 
@@ -16,19 +15,35 @@ class FrontPage(object):
     __name__ = ''
     
     def __init__(self):
+        self._setup = None
         self._brewery = None
         self._db = None
+        self._settings = None
 
+    @property
+    def settings(self):
+        if self._settings is not None:
+            return self._settings
+        reg = get_current_registry()
+        self._settings = reg.settings
+        return self._settings
+        
     @property
     def state(self):
         return self.brewery.json_state
 
+    def save_setup(self, setup):
+        setup['io_device'] = {
+            'class': self.settings['io_device'],
+            'kw': {'port': self.settings['io_port']},
+            }
+        factory = Factory(setup)
+    
     @property
     def brewery(self):
         if self._brewery is not None:
             return self._brewery
-        config = self.config
-        f = Factory(config)
+        f = Factory(self.config)
         brewery = f.brewery
         self._brewery = brewery
         return self._brewery
@@ -44,8 +59,7 @@ class FrontPage(object):
 
     @property
     def config(self):
-        settings = get_settings()
-        config = settings['config']
+        config = self.settings['config']
         return importString(config)
 
 front_page = FrontPage()

@@ -188,7 +188,12 @@ function getHistory() {
     $.get(historyUrl, handleHistory);
 }
 
-function handleState(data) {
+function handleNotification(data) {
+    timeoutId = setTimeout(getState, 1000);
+}
+
+function handleState(stateData) {
+    data = stateData.tanks[name];
     $('#thermometer-text').text(data.temperature.toFixed(1));
     $('#thermometer').progressbar({'value': data.temperature});
     $('#volume-text').text(data.volume.toFixed(2));
@@ -216,7 +221,12 @@ function handleState(data) {
     if (val != undefined)
         val = val.toFixed(2);
     $('#volume-target-text').text(val);
-    timeoutId = setTimeout(getState, 1000);
+    if (stateData.waiting != undefined) {
+        alert(stateData.waiting);
+        $.post(notificationUrl, {'post_message':stateData.waiting}, handleNotification);
+    }
+    else
+        timeoutId = setTimeout(getState, 1000);
 }
 
 function handleCalibrationOpen(){

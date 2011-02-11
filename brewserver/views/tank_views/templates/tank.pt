@@ -16,6 +16,7 @@
       var calibrationCurveUrl = "${calibration_curve_url}";
       var deletePointUrl = "${delete_point_url}";
       var savePointUrl = "${save_point_url}";
+      var notificationUrl = "${notification_url}";
     </script>
   </head>
   <body>
